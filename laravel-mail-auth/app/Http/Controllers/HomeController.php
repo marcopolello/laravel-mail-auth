@@ -16,15 +16,28 @@ class HomeController extends Controller
     $this->middleware('auth');
   }
 
+
+  public function sendEmail(Request $request) {
+    $data = $request -> validate([
+      'mailText' => 'required|min:10'
+    ]);
+    // dd($data);
+    $email = Auth::user() -> email;
+    Mail::to($email)
+      -> send(new SendMail($data['mailText']),
+    );
+    return redirect() -> back();
+  }
+
   public function index()
   {
     // dd(Auth::user());
-    $utente = Auth::user() -> all();
-    $email = Auth::user() -> email;
-
-    Mail::to($email)
-        -> send(new SendMail('esempio di dato inviato', 'test2'),
-      );
+    // $utente = Auth::user() -> all();
+    // $email = Auth::user() -> email;
+    //
+    // Mail::to($email)
+    //     -> send(new SendMail('esempio di dato inviato', 'test2'),
+    //   );
 
     return view('home');
   }

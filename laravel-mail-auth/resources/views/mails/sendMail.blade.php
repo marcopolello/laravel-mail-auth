@@ -6,13 +6,7 @@
   </head>
   <body>
 
-    <form class="Mail" action="index.html" method="post">
-      <h1>hello world from {{Auth::user() -> name}}</h1>
-      <h2 style="color: blue;"> {{$stringa}} </h2>
-
-      <h1>{{$test}}</h1>
-      <h1>{{$test2}}</h1>
-    </form>
+    {{$string}}
 
   </body>
 </html>
