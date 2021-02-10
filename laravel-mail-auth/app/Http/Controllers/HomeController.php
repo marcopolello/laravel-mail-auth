@@ -23,7 +23,8 @@ class HomeController extends Controller
     $email = Auth::user() -> email;
 
     Mail::to($email)
-        -> send(new SendMail());
+        -> send(new SendMail('esempio di dato inviato', 'test2'),
+      );
 
     return view('home');
   }

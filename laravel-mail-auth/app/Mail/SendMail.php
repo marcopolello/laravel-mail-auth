@@ -12,9 +12,13 @@ class SendMail extends Mailable
     use Queueable, SerializesModels;
 
     public $stringa;
-    public function __construct($esempio)
+    public $test;
+    public $test2;
+    public function __construct($string, $string2)
     {
-      $this -> stringa = $esempio;
+      $this -> stringa = $string;
+      $this -> test = 'ehila';
+      $this -> test2 = $string2;
     }
 
     public function build()
