@@ -14,9 +14,9 @@ class SendMail extends Mailable
     public $string;
     // public $test;
     // public $test2;
-    public function __construct($string)
+    public function __construct($formText)
     {
-      $this -> string = $string;
+      $this -> string = $formText;
       // $this -> test = 'ehila';
       // $this -> test2 = $string2;
     }
